@@ -36,8 +36,7 @@ public class Manager {
 
         if (films.length >= getLimitLastFilm()) {
             resultLength = getLimitLastFilm();
-        }
-        else {
+        } else {
             resultLength = films.length;
         }
 
@@ -47,7 +46,7 @@ public class Manager {
             filmsLast[i] = films[films.length - 1 - i];
         }
 
-        return  filmsLast;
+        return filmsLast;
     }
 
 }

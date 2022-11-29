@@ -13,7 +13,7 @@ public class ManagerTest {
     Film film7 = new Film("Назад в будущее", "фантастика", "1985");
     Film film8 = new Film("Интерстеллар", "фантастика", "2014");
 
-@Test
+    @Test
     public void testAdd() {
         Manager manager = new Manager();
 
