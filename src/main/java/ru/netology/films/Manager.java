@@ -42,7 +42,7 @@ public class Manager {
 
         Film[] filmsLast = new Film[resultLength];
 
-        for (int i = 0; i < getLimitLastFilm(); i++) {
+        for (int i = 0; i < resultLength; i++) {
             filmsLast[i] = films[films.length - 1 - i];
         }
 

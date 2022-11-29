@@ -29,7 +29,7 @@ public class ManagerTest {
     }
 
     @Test
-    public void testFilmsLast() {
+    public void testFilmsLastIfMore() {
 
         Manager manager = new Manager(5);
 
@@ -49,5 +49,66 @@ public class ManagerTest {
 
     }
 
+    @Test
+    public void testFilmsLastIfLess() {
+
+        Manager manager = new Manager(5);
+
+        manager.add(film1);
+        manager.add(film2);
+        manager.add(film3);
+        manager.add(film4);
+
+
+        Film[] expected = {film4, film3, film2, film1};
+        Film[] actual = manager.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testFilmsLastIfEqual() {
+
+        Manager manager = new Manager(5);
+
+        manager.add(film1);
+        manager.add(film2);
+        manager.add(film3);
+        manager.add(film4);
+        manager.add(film5);
+
+        Film[] expected = {film5, film4, film3, film2, film1};
+        Film[] actual = manager.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testFilmsLastIfOne() {
+
+        Manager manager = new Manager(5);
+
+        manager.add(film1);
+
+        Film[] expected = {film1};
+        Film[] actual = manager.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testFilmsLastIfNull() {
+
+        Manager manager = new Manager(5);
+
+        Film[] expected = {};
+        Film[] actual = manager.findLast();
+
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
 
 }
